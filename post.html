@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+<!-- google api for places -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsHybHgDxye72Os1Jw9eW2e1aowg-LMZo&libraries=places"></script>
+
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<title>Currex</title>
+
+</head>
+
+
+<body>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Find people to trade with</h1>
+        <!-- <p>Resize this responsive page to see the effect!</p>  -->
+      </div>
+
+      <div class="container border">
+        <div class="d-flex justify-content-around">
+            <p>Trade</p>
+        </div>
+
+            <div class="d-flex justify-content-around">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#buy">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#sell">Sell</a>
+                    </li>
+                  </ul>
+                
+            </div>
+        
+            <!-- Buy tab -->
+            <div class="tab-content">
+                <div id="buy" class="container tab-pane active">   
+                    <div class="d-flex justify-content-around">
+                    <form>
+                        <select name="cars" class="custom-select-sm">
+                            <option selected>Custom Select Menu</option>
+                            <option value="volvo">Pounds</option>
+                            <option value="fiat">Dollars</option>
+                            <option value="audi">Euro</option>
+                            <option value="audi">Naira</option>
+                        </select>
+                        </form>
+                    </div>
+                    <!-- End -->
+                    <!-- rate n location -->
+                    <div class="trade-ads d-flex justify-content-around mx-5">
+                        <div class="d-flex justify-content-around">
+                            <form class="form" action="/action_page.php">
+                                <label for="number">Buy Rate</label>
+                                <input type="number" class="form-control" placeholder="Enter amount" id="amount">
+                                <label for="location">Location</label>
+                                <input id="searchTextField" type="text" class="form-control" placeholder="Enter Location" id="location">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End -->
+                    <!-- min n max amount  -->
+                    <div class="d-flex justify-content-around">
+                        <form class="form-inline" action="/action_page.php">
+                            <label for="number">Min</label>
+                            <input type="number" class="form-control" placeholder="Enter amount" id="amount">
+                            <label for="location">Max</label>
+                            <input type="number" class="form-control" placeholder="Enter amount" id="location">
+                            
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </form>
+                    </div>
+                    <!-- End -->
+                    
+                    
+                </div>
+                <!-- end -->
+                <!-- Sell tab -->
+            
+                <div id="sell" class="container tab-pane">   
+                    <div class="d-flex justify-content-around">
+                    <form>
+                        <select name="cars" class="custom-select-sm">
+                            <option selected>Custom Select Menu</option>
+                            <option value="volvo">Pounds</option>
+                            <option value="fiat">Dollars</option>
+                            <option value="audi">Euro</option>
+                            <option value="audi">Naira</option>
+                        </select>
+                        </form>
+                    </div>
+                    <!-- End -->
+                    <!-- rate n location -->
+                    <div class="trade-ads d-flex justify-content-around mx-5">
+                        <div class="d-flex justify-content-around">
+                            <form class="form" action="/action_page.php">
+                                <label for="number">Sell Rate</label>
+                                <input type="number" class="form-control" placeholder="Enter amount" id="amount">
+                                <label for="location">Location</label>
+                                <input type="number" class="form-control" placeholder="Enter Location" id="location">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End -->
+                    <!-- min n max amount  -->
+                    <div class="d-flex justify-content-around">
+                        <form class="form-inline" action="/action_page.php">
+                            <label for="number">Min</label>
+                            <input type="number" class="form-control" placeholder="Enter amount" id="amount">
+                            <label for="location">Max</label>
+                            <input type="number" class="form-control" placeholder="Enter amount" id="location">
+                            
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end -->
+      </div>
+</body>
+<script>
+    //google maps api 
+function initialize() {
+  var input = document.getElementById('searchTextField');
+  new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</html>
